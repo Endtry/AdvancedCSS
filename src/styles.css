@@ -1,45 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+
 * {
-  margin:0px;
-  padding:0px;
+  margin: 0px;
+  padding: 0px;
 }
-html, body {
-  height:100vh;
-  width:100vw;
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
 }
 
 .main-container-grid {
-  display:grid;
-  grid-template-rows:1fr 10fr 1fr;
+  display: grid;
+  grid-template-rows: 1fr 12fr 1fr;
   height: 100vh;
 }
 
-.main-container-grid > div:nth-child(even) {
-  background-color:#CCC;
+.main-container-grid>div:nth-child(even) {
+  background-color: #CCC;
 }
-.main-container-grid > div:nth-child(odd) {
-  background-color:#F1f1f1;
+
+.main-container-grid>div:nth-child(odd) {
+  background-color: #F1f1f1;
 }
+
 /* main header */
+
 .main-header {
-  display:grid;
-  grid-template-columns:1fr 10fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-auto-rows: minmax(75px, 75px);
 }
 
 .header-logo {
-  align-self:center;
+  align-self: center;
 }
 
 .header-center {
-  display:grid;
-  align-self:center;
-  justify-self:center;
+  display: grid;
+  align-self: center;
+  justify-self: center;
   width: 100%;
   height: 100%;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
 }
+
 .header-right {
-  align-self:center;
-  justify-self:right;
+  align-self: center;
+  justify-self: right;
 }
+
+.header-center>div {
+  justify-self: center;
+  align-self: center;
+}
+
 /* end main header */
+
+/* main footer */
+
+.main-footer {
+  grid-auto-rows: minmax(75px, 75px);
+}
+
+/* main content grid */
+
+.main-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 5fr 2fr;
+  height: calc(100vh - 150px);
+  overflow: hidden;
+}
+
+.left-sidebar {
+  justify-self: center;
+}
+
+.right-sidebar {
+  justify-self: center;
+}
+
+.main-content {
+  justify-self: left;
+  display: grid;
+  overflow: auto;
+  width:100%;
+}
